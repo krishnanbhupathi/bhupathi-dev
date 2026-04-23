@@ -1,0 +1,26 @@
+{
+  "project": "krishna-portfolio",
+  "description": "Krishna's freelance portfolio — React + Vite + Tailwind + Framer Motion",
+  "language": "typescript",
+  "framework": "react",
+  "buildTool": "vite",
+  "styling": "tailwindcss",
+  "animations": "framer-motion",
+  "structure": "single-page",
+  "conventions": {
+    "components": "src/components/",
+    "hooks": "src/hooks/",
+    "assets": "src/assets/",
+    "styles": "src/styles/",
+    "utils": "src/utils/",
+    "types": "src/types/"
+  },
+  "linting": {
+    "eslint": true,
+    "prettier": true
+  },
+  "testing": {
+    "framework": "vitest",
+    "coverage": true
+  }
+}
