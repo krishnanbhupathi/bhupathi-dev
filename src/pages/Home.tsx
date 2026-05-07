@@ -20,9 +20,6 @@ const FAQ = lazy(() =>
 const TechStack = lazy(() =>
   import('@/components/sections/TechStack').then((m) => ({ default: m.TechStack })),
 );
-const Writing = lazy(() =>
-  import('@/components/sections/Writing').then((m) => ({ default: m.Writing })),
-);
 const Contact = lazy(() =>
   import('@/components/sections/Contact').then((m) => ({ default: m.Contact })),
 );
@@ -50,9 +47,6 @@ export const Home = () => (
     </Suspense>
     <Suspense fallback={<SectionFallback />}>
       <TechStack />
-    </Suspense>
-    <Suspense fallback={<SectionFallback />}>
-      <Writing />
     </Suspense>
     <Suspense fallback={<SectionFallback />}>
       <Contact />

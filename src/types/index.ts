@@ -35,10 +35,3 @@ export interface WhyItem {
   description: string;
 }
 
-export interface BlogPost {
-  category: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  href: string;
-}
