@@ -1,4 +1,4 @@
-import { ArrowUpRight, Lock, Play } from 'lucide-react';
+import { ArrowUpRight, Image as ImageIcon, Lock, Play } from 'lucide-react';
 import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
 import { SectionHead } from '@/components/layout/SectionHead';
@@ -100,22 +100,33 @@ export const Projects = () => (
                   ))}
                 </div>
                 <div
-                  className="flex items-center justify-between gap-4 flex-wrap border-t border-line pt-3 mt-1 mb-3"
+                  className="flex flex-col gap-2 border-t border-line pt-3 mt-1 mb-3"
                   style={{ letterSpacing: '-0.32px' }}
                 >
-                  <span className="inline-flex items-center gap-1.5 text-[13px] font-medium text-text-mute">
-                    <Lock size={14} aria-hidden="true" />
-                    Code available on request
-                  </span>
+                  <div className="flex items-center justify-between gap-4 flex-wrap">
+                    <span className="inline-flex items-center gap-1.5 text-[13px] font-medium text-text-mute">
+                      <Lock size={14} aria-hidden="true" />
+                      Code available on request
+                    </span>
+                    <a
+                      href={project.walkthroughHref}
+                      {...(externalWalkthrough
+                        ? { target: '_blank', rel: 'noopener noreferrer' }
+                        : {})}
+                      className="inline-flex items-center gap-1.5 text-[13px] font-medium text-accent-ink hover:underline"
+                    >
+                      <Play size={14} aria-hidden="true" />
+                      Watch architecture walkthrough →
+                    </a>
+                  </div>
                   <a
-                    href={project.walkthroughHref}
-                    {...(externalWalkthrough
-                      ? { target: '_blank', rel: 'noopener noreferrer' }
-                      : {})}
-                    className="inline-flex items-center gap-1.5 text-[13px] font-medium text-accent-ink hover:underline"
+                    href={project.fullDiagramSrc}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="self-end inline-flex items-center gap-1.5 text-[13px] font-medium text-accent-ink hover:underline"
                   >
-                    <Play size={14} aria-hidden="true" />
-                    Watch architecture walkthrough →
+                    <ImageIcon size={14} aria-hidden="true" />
+                    View full architecture diagram →
                   </a>
                 </div>
                 <SectionLink

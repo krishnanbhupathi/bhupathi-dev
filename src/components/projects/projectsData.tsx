@@ -22,6 +22,7 @@ export const PROJECTS: Project[] = [
     diagram: <AnalyticsDiagram />,
     diagramAriaLabel: 'Event pipeline architecture diagram',
     walkthroughHref: 'https://videos.bhupathi.dev/analytics-walkthrough.mp4',
+    fullDiagramSrc: 'https://videos.bhupathi.dev/diagrams/analytics.svg?v=2',
   },
   {
     category: 'Fintech · Payments',
@@ -38,6 +39,7 @@ export const PROJECTS: Project[] = [
     diagram: <TreasuryDiagram />,
     diagramAriaLabel: 'Treasury integration architecture diagram',
     walkthroughHref: 'https://videos.bhupathi.dev/treasury-walkthrough.mp4',
+    fullDiagramSrc: 'https://videos.bhupathi.dev/diagrams/treasury.svg?v=2',
   },
   {
     category: 'Logistics · AI Automation',
@@ -54,6 +56,7 @@ export const PROJECTS: Project[] = [
     diagram: <AIWorkflowDiagram />,
     diagramAriaLabel: 'AI agent workflow architecture diagram',
     walkthroughHref: 'https://videos.bhupathi.dev/ai-workflow-walkthrough.mp4',
+    fullDiagramSrc: 'https://videos.bhupathi.dev/diagrams/ai-workflow.svg?v=2',
   },
   {
     category: 'HealthTech · Telehealth',
@@ -70,5 +73,6 @@ export const PROJECTS: Project[] = [
     diagram: <ClinicalDiagram />,
     diagramAriaLabel: 'Clinical operations platform flow diagram',
     walkthroughHref: 'https://videos.bhupathi.dev/clinical-walkthrough.mp4',
+    fullDiagramSrc: 'https://videos.bhupathi.dev/diagrams/clinical.svg?v=2',
   },
 ];

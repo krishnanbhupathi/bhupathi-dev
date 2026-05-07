@@ -27,6 +27,7 @@ export interface Project {
   diagram: ReactNode;
   diagramAriaLabel: string;
   walkthroughHref: string;
+  fullDiagramSrc: string;
 }
 
 export interface WhyItem {
