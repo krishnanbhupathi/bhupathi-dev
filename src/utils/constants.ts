@@ -1,0 +1,63 @@
+export const SITE = {
+  name: 'Krishna',
+  title: 'Krishna — Software Engineer & Systems Architect',
+  email: 'krishnanbhupathi@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/murali-krishna-b-913236190/',
+  linkedinHandle: '/in/murali-krishna-b',
+  availability: 'Q2 2026',
+  location: 'India',
+  yearsExperience: 4,
+  copyright: '© 2026 Murali Krishna B',
+} as const;
+
+export const NAV_LINKS = [
+  { href: '#work', label: 'Work' },
+  { href: '#services', label: 'Services' },
+  { href: '#why', label: 'Why me' },
+  { href: '#process', label: 'Process' },
+  { href: '#faq', label: 'FAQ' },
+] as const;
+
+export const TYPEWRITER_WORDS = ['makes money.', 'ships.', 'scales.', 'lasts.'] as const;
+
+export const HERO_DESCRIPTION =
+  'Software engineer with experience building scalable backend systems in Java, Spring Boot, and AWS. Ex-Amazon SDE. I work with founders and product teams in the US, UK, and UAE — microservices, REST APIs, and infrastructure that holds up under real load.';
+
+export const DOMAIN_TAGS = ['Fintech', 'SaaS', 'HealthTech', 'Ops'] as const;
+
+export const SKILLS = [
+  { label: 'Java / Spring Boot', value: 94, dark: false },
+  { label: 'React / JavaScript', value: 88, dark: true },
+  { label: 'AWS / DevOps', value: 85, dark: false },
+  { label: 'Python / SQL', value: 82, dark: true },
+  { label: 'System Design', value: 80, dark: false },
+] as const;
+
+export const SPARK_HEIGHTS = [40, 65, 45, 80, 55, 90, 70, 95] as const;
+
+export const PROOF_ITEMS = [
+  { num: '12', accent: '+', label: 'Projects shipped\nto production' },
+  { num: '3', accent: '', label: 'Countries served\nUS · UK · UAE' },
+  { num: '4', accent: 'yr', label: 'Senior engineering\nexperience' },
+  { num: '24', accent: 'h', label: 'Response time\nguaranteed' },
+  { num: '$0', accent: '', label: 'Wasted budget —\nfixed-scope quotes' },
+] as const;
+
+export const TECH_PILLS = [
+  { name: 'Java', icon: 'Coffee' },
+  { name: 'Spring Boot', icon: 'Leaf' },
+  { name: 'Python', icon: 'Terminal' },
+  { name: 'React', icon: 'Atom' },
+  { name: 'JavaScript', icon: 'Braces' },
+  { name: 'SQL', icon: 'Database' },
+  { name: 'PostgreSQL', icon: 'Database' },
+  { name: 'AWS', icon: 'Cloud' },
+  { name: 'Docker', icon: 'Container' },
+  { name: 'Microservices', icon: 'Boxes' },
+  { name: 'REST APIs', icon: 'Share2' },
+  { name: 'DynamoDB', icon: 'Layers' },
+  { name: 'S3 / Lambda', icon: 'Zap' },
+  { name: 'Spring Security', icon: 'Shield' },
+  { name: 'Git', icon: 'GitBranch' },
+  { name: 'C++', icon: 'Code2' },
+] as const;

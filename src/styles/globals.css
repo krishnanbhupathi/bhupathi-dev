@@ -1,0 +1,322 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply box-border m-0 p-0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-bg text-text font-sans;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.32px;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #b2e659;
+    color: #102c26;
+  }
+
+  /* Prevent iOS auto-zoom on form fields */
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
+@layer components {
+  .container-app {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: 480px) {
+    .container-app {
+      padding: 0 20px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .container-app {
+      padding: 0 16px;
+    }
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-[10px] text-[13px] font-medium text-text;
+    letter-spacing: -0.32px;
+    margin-bottom: 20px;
+    opacity: 0.7;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  .section-title {
+    font-size: clamp(34px, 4.2vw, 48px);
+    line-height: 1;
+    letter-spacing: -0.32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    max-width: 18ch;
+    color: #102c26;
+  }
+  .section-title .hl {
+    display: inline-block;
+    color: #b2e659;
+    background: #102c26;
+    padding: 0 0.15em;
+  }
+
+  .section-desc {
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.32px;
+    color: #3a5449;
+    max-width: 580px;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.32px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition:
+      transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+      background 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+      color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .btn-primary {
+    background: #102c26;
+    color: #b2e659;
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: #102c26;
+    border-color: #c4ae87;
+  }
+  .btn-secondary:hover {
+    border-color: #102c26;
+    background: #fff5e6;
+  }
+
+  /* Diagram primitives — used inside project SVGs */
+  .diag-node {
+    fill: #ffffff;
+    stroke: #102c26;
+    stroke-width: 1.2;
+  }
+  .diag-node-accent {
+    fill: #b2e659;
+    stroke: #102c26;
+    stroke-width: 1.2;
+  }
+  .diag-node-dark {
+    fill: #102c26;
+    stroke: #102c26;
+    stroke-width: 1.2;
+  }
+  .diag-label {
+    font-family: 'Geist Sans', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+    fill: #102c26;
+  }
+  .diag-label-light {
+    font-family: 'Geist Sans', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+    fill: #ffffff;
+  }
+  .diag-caption {
+    font-family: 'Geist Sans', system-ui, sans-serif;
+    font-size: 8.5px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    fill: #6b7f77;
+    text-transform: uppercase;
+  }
+  .diag-edge {
+    stroke: #102c26;
+    stroke-width: 1;
+    fill: none;
+  }
+  .diag-edge-dashed {
+    stroke: #102c26;
+    stroke-width: 1;
+    fill: none;
+    stroke-dasharray: 3 3;
+  }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    padding: 12px 16px;
+    background: #102c26;
+    color: #b2e659;
+    font-weight: 500;
+  }
+  .skip-link:focus {
+    left: 16px;
+    top: 16px;
+  }
+
+  /* Focus visible */
+  *:focus-visible {
+    outline: 2px solid #b2e659;
+    outline-offset: 2px;
+  }
+
+  /* Hide native disclosure marker on <details>/<summary> (Safari + Firefox) */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary {
+    list-style: none;
+  }
+
+  /* Markdown body styling for blog posts */
+  .prose-blog > * + * {
+    margin-top: 0;
+  }
+  .prose-blog h1 {
+    font-size: 28px;
+    line-height: 1.15;
+    font-weight: 600;
+    letter-spacing: -0.32px;
+    color: #102c26;
+    margin-top: 40px;
+    margin-bottom: 16px;
+  }
+  .prose-blog h2 {
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.32px;
+    color: #102c26;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+  .prose-blog h3 {
+    font-size: 20px;
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: -0.32px;
+    color: #102c26;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+  .prose-blog p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #3a5449;
+    margin-bottom: 24px;
+  }
+  .prose-blog a {
+    color: #102c26;
+    border-bottom: 1px solid #dbc9a4;
+    padding-bottom: 1px;
+    transition: border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .prose-blog a:hover {
+    border-bottom-color: #102c26;
+  }
+  .prose-blog ul,
+  .prose-blog ol {
+    color: #3a5449;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    padding-left: 1.4em;
+  }
+  .prose-blog ul {
+    list-style: disc;
+  }
+  .prose-blog ol {
+    list-style: decimal;
+  }
+  .prose-blog li {
+    margin-bottom: 6px;
+  }
+  .prose-blog li > p {
+    margin-bottom: 8px;
+  }
+  .prose-blog blockquote {
+    border-left: 2px solid #b2e659;
+    padding-left: 16px;
+    font-style: italic;
+    color: #3a5449;
+    margin-bottom: 24px;
+  }
+  .prose-blog hr {
+    border: none;
+    border-top: 1px solid #dbc9a4;
+    margin: 32px 0;
+  }
+  .prose-blog code {
+    background: #edd9b7;
+    color: #102c26;
+    padding: 2px 6px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 14px;
+  }
+  .prose-blog pre {
+    background: #102c26;
+    color: #fff8ee;
+    padding: 16px;
+    overflow-x: auto;
+    margin-bottom: 24px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .prose-blog pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: inherit;
+  }
+  .prose-blog strong {
+    color: #102c26;
+    font-weight: 600;
+  }
+  .prose-blog em {
+    font-style: italic;
+  }
+}

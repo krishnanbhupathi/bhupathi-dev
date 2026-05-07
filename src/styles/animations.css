@@ -1,0 +1,468 @@
+/* ============================================================
+   Continuous, looping CSS animations.
+   These run forever and outlive Framer Motion entrance anims.
+   GPU-only: transform + opacity, no layout properties.
+   ============================================================ */
+
+/* Background overlays */
+.bg-wash {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(rgba(16, 44, 38, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: 0 0;
+  opacity: 0.55;
+}
+.bg-corners {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(600px 400px at 90% -5%, rgba(178, 230, 89, 0.18), transparent 60%),
+    radial-gradient(500px 400px at -10% 100%, rgba(178, 230, 89, 0.1), transparent 60%);
+}
+
+/* Hero blobs */
+.hero-blob {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: -100px;
+  right: -80px;
+  background: radial-gradient(
+    circle,
+    rgba(178, 230, 89, 0.18) 0%,
+    rgba(178, 230, 89, 0.04) 50%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+  animation: blobOrbit 18s ease-in-out infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+.hero-blob-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  bottom: -60px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(16, 44, 38, 0.08) 0%, transparent 70%);
+  filter: blur(30px);
+  pointer-events: none;
+  z-index: 0;
+  animation: blobOrbit2 22s ease-in-out infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+@keyframes blobOrbit {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(-40px, 30px, 0);
+  }
+  50% {
+    transform: translate3d(-20px, -20px, 0);
+  }
+  75% {
+    transform: translate3d(30px, 10px, 0);
+  }
+}
+@keyframes blobOrbit2 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  33% {
+    transform: translate3d(30px, -20px, 0);
+  }
+  66% {
+    transform: translate3d(-20px, 25px, 0);
+  }
+}
+
+@media (max-width: 720px) {
+  .hero-blob {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    right: -40px;
+  }
+  .hero-blob-2 {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Pulse dot (badge / status) */
+@keyframes pulseDot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(22, 163, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+  }
+}
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  background: #16a34a;
+  box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.55);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(178, 230, 89, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(178, 230, 89, 0);
+  }
+}
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background: #b2e659;
+  flex-shrink: 0;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+/* Hero title clip reveal */
+.hero-line {
+  display: block;
+  overflow: hidden;
+}
+.hero-line-inner {
+  display: block;
+  transform: translate3d(0, 110%, 0);
+  animation: lineReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform;
+}
+.hero-line:nth-child(1) .hero-line-inner {
+  animation-delay: 0.2s;
+}
+.hero-line:nth-child(2) .hero-line-inner {
+  animation-delay: 0.35s;
+}
+@keyframes lineReveal {
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Typewriter accent block */
+.type-wrap {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+.type-ghost {
+  visibility: hidden;
+  white-space: nowrap;
+  padding: 0 0.18em;
+}
+.type-accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #b2e659;
+  background: #102c26;
+  padding: 0 0.18em;
+  line-height: 1.08;
+  white-space: nowrap;
+  clip-path: inset(0 100% 0 0);
+  animation: accentSweep 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+}
+@keyframes accentSweep {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+.type-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.8em;
+  background: #b2e659;
+  margin-left: 3px;
+  transform: translateY(6px);
+  animation: blink 1s infinite;
+  vertical-align: baseline;
+}
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Hero capture shimmer border */
+.hero-capture {
+  display: flex;
+  gap: 0;
+  max-width: 520px;
+  background: #fff8ee;
+  border: 1px solid transparent;
+  padding: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-capture::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(90deg, #dbc9a4 0%, #b2e659 50%, #dbc9a4 100%);
+  z-index: 0;
+}
+.hero-capture::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: #fff8ee;
+  z-index: 0;
+}
+.hero-capture > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero capture button glow sweep */
+.hero-capture-btn {
+  position: relative;
+  overflow: hidden;
+}
+.hero-capture-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(178, 230, 89, 0.2) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: btnGlow 3s ease-in-out 1.5s infinite;
+  pointer-events: none;
+}
+@keyframes btnGlow {
+  0% {
+    transform: translateX(-100%);
+  }
+  40% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ============================================================
+   Hero card unified-float — all cards move in the SAME
+   vertical direction. Stagger delays differentiate them.
+   Mobile reduces amplitude.
+   ============================================================ */
+@keyframes unifiedFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -24px, 0);
+  }
+}
+@keyframes unifiedFloatTablet {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -16px, 0);
+  }
+}
+@keyframes unifiedFloatMobile {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+/* Continuous float, kicks in after Framer Motion entrance.
+   The 3D + perspective hints engage the GPU's 3D rendering pipeline,
+   which handles sub-pixel positioning more cleanly at non-100% zoom
+   levels. text-rendering geometricPrecision keeps glyph anti-aliasing
+   stable across frames so moving text doesn't shimmer. */
+.hero-card-float-1,
+.hero-card-float-2,
+.hero-card-float-3 {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+.hero-card-float-1 {
+  animation: unifiedFloat 12s ease-in-out 0.4s infinite;
+}
+.hero-card-float-2 {
+  animation: unifiedFloat 12s ease-in-out 0.6s infinite;
+}
+.hero-card-float-3 {
+  animation: unifiedFloat 12s ease-in-out 0.8s infinite;
+}
+@media (max-width: 980px) {
+  .hero-card-float-1 {
+    animation: unifiedFloatTablet 14s ease-in-out 0.4s infinite;
+  }
+  .hero-card-float-2 {
+    animation: unifiedFloatTablet 14s ease-in-out 0.6s infinite;
+  }
+  .hero-card-float-3 {
+    animation: unifiedFloatTablet 14s ease-in-out 0.8s infinite;
+  }
+}
+@media (max-width: 720px) {
+  .hero-card-float-1 {
+    animation: unifiedFloatMobile 14s ease-in-out 0.4s infinite;
+  }
+  .hero-card-float-2 {
+    animation: unifiedFloatMobile 14s ease-in-out 0.6s infinite;
+  }
+  .hero-card-float-3 {
+    animation: unifiedFloatMobile 14s ease-in-out 0.8s infinite;
+  }
+}
+
+/* Grid drift — applied to the whole card group */
+.hero-cards-grid-drift {
+  animation: gridDrift 10s ease-in-out infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+@keyframes gridDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40% {
+    transform: translate3d(0, -20px, 0);
+  }
+  70% {
+    transform: translate3d(0, 14px, 0);
+  }
+}
+@media (max-width: 720px) {
+  .hero-cards-grid-drift {
+    animation: gridDriftMobile 12s ease-in-out infinite;
+  }
+}
+@keyframes gridDriftMobile {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, 6px, 0);
+  }
+}
+
+/* Status bar scanning light — disabled (was animating `left`, causing reflow). */
+.status-bar-scan {
+  position: relative;
+}
+
+/* Skill bar fills — solid, no shimmer */
+.sk-fill-shimmer-light {
+  background: #b2e659;
+}
+.sk-fill-shimmer-dark {
+  background: #102c26;
+}
+
+/* Spark bar — static, no breathing */
+.spark-bar {
+  transform-origin: bottom;
+}
+
+/* Live blinker */
+@keyframes liveBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+.live-dot {
+  animation: liveBlink 1.5s ease-in-out infinite;
+}
+
+/* Marquee */
+.marquee-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: marquee 45s linear infinite;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Ring pulse */
+@keyframes ringPulse {
+  0%,
+  100% {
+    stroke-opacity: 1;
+  }
+  50% {
+    stroke-opacity: 0.6;
+  }
+}
+
+/* Reduced motion: kill continuous animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-card-float-1,
+  .hero-card-float-2,
+  .hero-card-float-3,
+  .hero-cards-grid-drift,
+  .marquee-track {
+    animation: none !important;
+  }
+}
