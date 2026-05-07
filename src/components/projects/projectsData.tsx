@@ -21,7 +21,7 @@ export const PROJECTS: Project[] = [
     tech: ['Next.js', 'Node.js', 'PostgreSQL', 'ClickHouse', 'Kafka', 'AWS'],
     diagram: <AnalyticsDiagram />,
     diagramAriaLabel: 'Event pipeline architecture diagram',
-    walkthroughHref: '#',
+    walkthroughHref: 'https://www.loom.com/share/14ae45ce8ebf47ba9c0c6356938f0d39',
   },
   {
     category: 'Fintech · Payments',

@@ -29,14 +29,6 @@ export interface Project {
   walkthroughHref: string;
 }
 
-export interface Testimonial {
-  initials: string;
-  name: string;
-  role: string;
-  reference?: string;
-  quote: string;
-}
-
 export interface WhyItem {
   icon: ReactNode;
   title: string;

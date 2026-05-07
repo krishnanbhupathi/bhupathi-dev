@@ -42,7 +42,7 @@ export const Services = () => (
             Engineering that moves <span className="hl">the business</span> forward.
           </>
         }
-        description="4 years of working with founders and product teams who need more than code — architecture, trade-offs, and delivery velocity."
+        description="Working with founders and product teams who need more than code — architecture, trade-offs, and delivery velocity."
       />
 
       <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-line">

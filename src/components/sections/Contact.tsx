@@ -13,9 +13,9 @@ interface TrustStat {
 }
 
 const TRUST_STATS: TrustStat[] = [
-  { icon: CheckCircle2, label: '12+ projects shipped' },
-  { icon: Clock, label: 'Avg response: 4 hours' },
-  { icon: Globe, label: '3 countries served' },
+  { icon: CheckCircle2, label: 'Production-grade delivery' },
+  { icon: Clock, label: 'Reply within 24 hours, weekdays' },
+  { icon: Globe, label: 'US · UK · UAE time zones' },
 ];
 
 export const Contact = () => {

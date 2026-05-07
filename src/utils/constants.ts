@@ -6,7 +6,6 @@ export const SITE = {
   linkedinHandle: '/in/murali-krishna-b',
   availability: 'Q2 2026',
   location: 'India',
-  yearsExperience: 4,
   copyright: '© 2026 Murali Krishna B',
 } as const;
 
@@ -36,11 +35,11 @@ export const SKILLS = [
 export const SPARK_HEIGHTS = [40, 65, 45, 80, 55, 90, 70, 95] as const;
 
 export const PROOF_ITEMS = [
-  { num: '12', accent: '+', label: 'Projects shipped\nto production' },
-  { num: '3', accent: '', label: 'Countries served\nUS · UK · UAE' },
-  { num: '4', accent: 'yr', label: 'Senior engineering\nexperience' },
-  { num: '24', accent: 'h', label: 'Response time\nguaranteed' },
-  { num: '$0', accent: '', label: 'Wasted budget —\nfixed-scope quotes' },
+  { num: 'Senior', accent: '', label: 'Production engineer\nIndia · GMT+5:30' },
+  { num: 'US · UK', accent: ' · UAE', label: 'Client time zones\ncovered' },
+  { num: 'Async', accent: '', label: 'Daily updates\nin your channel' },
+  { num: '24', accent: 'h', label: 'Response time\nweekdays' },
+  { num: 'Fixed', accent: '', label: 'Scope quotes —\nno surprise invoices' },
 ] as const;
 
 export const TECH_PILLS = [

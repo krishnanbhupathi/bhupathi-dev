@@ -18,7 +18,7 @@ export const Projects = () => (
             Systems I&apos;ve designed <span className="hl">and shipped.</span>
           </>
         }
-        description="Representative projects from 4 years of building scalable systems. Client names anonymized — architecture and approach are real. Detailed walkthroughs available on request."
+        description="Representative projects from production engagements. Client names anonymized — architecture and approach are real. Detailed walkthroughs available on request."
       />
 
       <StaggerGroup className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6 max-lg:max-w-[640px] max-lg:mx-auto">
