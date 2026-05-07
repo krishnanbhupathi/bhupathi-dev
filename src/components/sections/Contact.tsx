@@ -18,20 +18,46 @@ const TRUST_STATS: TrustStat[] = [
   { icon: Globe, label: 'US · UK · UAE time zones' },
 ];
 
-export const Contact = () => {
-  const [submitLabel, setSubmitLabel] = useState('Send message');
+type SubmitState = 'idle' | 'sending' | 'success' | 'error';
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+const SUBMIT_LABEL: Record<SubmitState, string> = {
+  idle: 'Send message',
+  sending: 'Sending…',
+  success: 'Message sent ✓',
+  error: 'Couldn’t send — try email',
+};
+
+export const Contact = () => {
+  const [status, setStatus] = useState<SubmitState>('idle');
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (status === 'sending') return;
     const form = e.currentTarget;
     const name = (form.elements.namedItem('name') as HTMLInputElement).value;
     const email = (form.elements.namedItem('email') as HTMLInputElement).value;
     const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
-    setSubmitLabel('Opening mail…');
-    const subject = encodeURIComponent(`New project inquiry — ${name}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name}\n${email}`);
-    window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
-    window.setTimeout(() => setSubmitLabel('Message sent ✓'), 600);
+
+    setStatus('sending');
+    try {
+      const res = await fetch(SITE.formspreeEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          _subject: `New project inquiry — ${name}`,
+        }),
+      });
+      if (!res.ok) throw new Error(`Formspree responded ${res.status}`);
+      setStatus('success');
+      form.reset();
+      window.setTimeout(() => setStatus('idle'), 4000);
+    } catch {
+      setStatus('error');
+      window.setTimeout(() => setStatus('idle'), 5000);
+    }
   };
 
   return (
@@ -201,10 +227,28 @@ export const Contact = () => {
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary w-full justify-center">
-                <span>{submitLabel}</span>
+              <button
+                type="submit"
+                disabled={status === 'sending'}
+                aria-live="polite"
+                className="btn btn-primary w-full justify-center disabled:opacity-70 disabled:cursor-not-allowed"
+              >
+                <span>{SUBMIT_LABEL[status]}</span>
                 <Send size={17} aria-hidden="true" />
               </button>
+              {status === 'error' && (
+                <p
+                  role="alert"
+                  className="mt-3 text-[13px] text-text-mute"
+                  style={{ letterSpacing: '-0.32px' }}
+                >
+                  Network hiccup. Please email{' '}
+                  <a href={`mailto:${SITE.email}`} className="text-text underline">
+                    {SITE.email}
+                  </a>{' '}
+                  directly.
+                </p>
+              )}
             </form>
           </ScrollReveal>
         </div>

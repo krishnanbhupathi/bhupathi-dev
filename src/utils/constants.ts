@@ -7,6 +7,7 @@ export const SITE = {
   availability: 'Q2 2026',
   location: 'India',
   copyright: '© 2026 Murali Krishna B',
+  formspreeEndpoint: 'https://formspree.io/f/xkoyvrgp',
 } as const;
 
 export const NAV_LINKS = [
