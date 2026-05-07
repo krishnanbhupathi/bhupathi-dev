@@ -36,4 +36,13 @@ export const staggerItem: Variants = {
   },
 };
 
-export const inViewOnce = { once: true, amount: 0.12 } as const;
+/**
+ * Trigger reveals well before the element scrolls into view so animations
+ * complete by the time the user actually sees them. Avoids blank-section
+ * gaps on mobile where users scroll faster than `amount: 0.12` can catch.
+ */
+export const inViewOnce = {
+  once: true,
+  amount: 0,
+  margin: '0px 0px 200px 0px',
+} as const;

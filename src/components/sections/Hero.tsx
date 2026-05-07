@@ -15,6 +15,9 @@ export const Hero = () => {
   const word = useTypewriter({
     words: TYPEWRITER_WORDS,
     enabled: !reduced,
+    // Wait until Hero entrance animations (~1s) finish before adding
+    // re-render pressure from the typewriter setText loop.
+    startDelayMs: 1500,
   });
   const sectionRef = useRef<HTMLElement>(null);
   const blobARef = useRef<HTMLDivElement>(null);
