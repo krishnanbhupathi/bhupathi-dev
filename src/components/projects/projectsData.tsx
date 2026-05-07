@@ -21,7 +21,7 @@ export const PROJECTS: Project[] = [
     tech: ['Next.js', 'Node.js', 'PostgreSQL', 'ClickHouse', 'Kafka', 'AWS'],
     diagram: <AnalyticsDiagram />,
     diagramAriaLabel: 'Event pipeline architecture diagram',
-    walkthroughHref: 'https://www.loom.com/share/14ae45ce8ebf47ba9c0c6356938f0d39',
+    walkthroughHref: 'https://videos.bhupathi.dev/analytics-walkthrough.mp4',
   },
   {
     category: 'Fintech · Payments',
@@ -37,7 +37,7 @@ export const PROJECTS: Project[] = [
     tech: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'AWS KMS', 'Docker'],
     diagram: <TreasuryDiagram />,
     diagramAriaLabel: 'Treasury integration architecture diagram',
-    walkthroughHref: '#',
+    walkthroughHref: 'https://videos.bhupathi.dev/treasury-walkthrough.mp4',
   },
   {
     category: 'Logistics · AI Automation',
@@ -53,7 +53,7 @@ export const PROJECTS: Project[] = [
     tech: ['Python', 'FastAPI', 'Claude API', 'Temporal', 'Postgres'],
     diagram: <AIWorkflowDiagram />,
     diagramAriaLabel: 'AI agent workflow architecture diagram',
-    walkthroughHref: '#',
+    walkthroughHref: 'https://videos.bhupathi.dev/ai-workflow-walkthrough.mp4',
   },
   {
     category: 'HealthTech · Telehealth',
@@ -69,6 +69,6 @@ export const PROJECTS: Project[] = [
     tech: ['Next.js', 'tRPC', 'PostgreSQL', 'Prisma', 'AWS'],
     diagram: <ClinicalDiagram />,
     diagramAriaLabel: 'Clinical operations platform flow diagram',
-    walkthroughHref: '#',
+    walkthroughHref: 'https://videos.bhupathi.dev/clinical-walkthrough.mp4',
   },
 ];
