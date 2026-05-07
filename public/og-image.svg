@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#F7E7CE"/>
+
+  <!-- Top-right corner accent -->
+  <radialGradient id="cornerA" cx="100%" cy="0%" r="60%">
+    <stop offset="0%" stop-color="#b2e659" stop-opacity="0.35"/>
+    <stop offset="60%" stop-color="#b2e659" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#cornerA)"/>
+
+  <!-- Bottom-left corner accent -->
+  <radialGradient id="cornerB" cx="0%" cy="100%" r="50%">
+    <stop offset="0%" stop-color="#b2e659" stop-opacity="0.18"/>
+    <stop offset="60%" stop-color="#b2e659" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#cornerB)"/>
+
+  <!-- Brand mark (top-left) -->
+  <rect x="80" y="76" width="20" height="20" fill="#b2e659"/>
+  <text x="115" y="94" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#102C26" letter-spacing="-0.5">Krishna</text>
+
+  <!-- Headline -->
+  <text x="80" y="280" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="76" font-weight="600" fill="#102C26" letter-spacing="-2">I build software</text>
+
+  <!-- Headline line 2 with accent block -->
+  <text x="80" y="370" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="76" font-weight="600" fill="#102C26" letter-spacing="-2">that</text>
+  <rect x="248" y="305" width="380" height="84" fill="#102C26"/>
+  <text x="270" y="370" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="76" font-weight="600" fill="#b2e659" letter-spacing="-2">makes money.</text>
+
+  <!-- Subhead -->
+  <text x="80" y="450" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="26" font-weight="400" fill="#3A5449" letter-spacing="-0.5">Senior software engineer · Backend, cloud, full-stack</text>
+  <text x="80" y="488" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="26" font-weight="400" fill="#3A5449" letter-spacing="-0.5">Building for founders in the US, UK, and UAE</text>
+
+  <!-- Footer strip -->
+  <rect x="80" y="540" width="1040" height="1" fill="#DBC9A4"/>
+  <text x="80" y="585" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" font-weight="500" fill="#6B7F77" letter-spacing="0.04em">BHUPATHI.DEV</text>
+  <text x="1120" y="585" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" font-weight="500" fill="#6B7F77" letter-spacing="0.04em" text-anchor="end">AVAILABLE Q2 2026</text>
+</svg>
