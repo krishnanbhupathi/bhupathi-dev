@@ -10,7 +10,7 @@ export const Section = ({ id, children, className, ...rest }: SectionProps) => (
   <section
     id={id}
     className={cn(
-      'relative py-[56px] sm:py-[72px] lg:py-[88px] 2xs:max-md:py-[48px]',
+      'relative py-[44px] sm:py-[56px] lg:py-[68px] 2xs:max-md:py-[40px] scroll-mt-[72px]',
       className,
     )}
     {...rest}
