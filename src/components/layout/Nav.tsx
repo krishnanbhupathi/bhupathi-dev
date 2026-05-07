@@ -28,12 +28,12 @@ export const Nav = () => {
       <div className="max-w-container mx-auto px-5 lg:px-8 py-3 lg:py-4 flex items-center justify-between gap-6 relative">
         <Link
           to="/"
-          aria-label="Krishna — home"
+          aria-label="Krishna Bhupathi — home"
           className="inline-flex items-center gap-[10px] min-h-[44px] -mx-2 px-2 text-text font-semibold text-base"
           style={{ letterSpacing: '-0.32px' }}
         >
           <span className="w-2 h-2 bg-accent" aria-hidden="true" />
-          Krishna
+          Krishna Bhupathi
         </Link>
 
         <div className="hidden min-[721px]:flex items-center gap-1">

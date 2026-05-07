@@ -1,6 +1,6 @@
 export const SITE = {
-  name: 'Krishna',
-  title: 'Krishna — Software Engineer & Systems Architect',
+  name: 'Krishna Bhupathi',
+  title: 'Krishna Bhupathi — Software Engineer & Systems Architect',
   email: 'krishnanbhupathi@gmail.com',
   linkedin: 'https://www.linkedin.com/in/murali-krishna-b-913236190/',
   linkedinHandle: '/in/murali-krishna-b',
