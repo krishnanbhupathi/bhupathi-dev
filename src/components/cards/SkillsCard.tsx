@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { cn } from '@/utils/cn';
 import { SKILLS } from '@/utils/constants';
 
 interface SkillsCardProps {
@@ -17,31 +16,21 @@ export const SkillsCard = ({ inView }: SkillsCardProps) => (
       <div className="text-[10.5px] font-medium tracking-[0.08em] text-text-mute uppercase mb-3.5">
         Stack
       </div>
-      {SKILLS.map((skill, i) => (
-        <div key={skill.label} className={cn(i === SKILLS.length - 1 ? 'mb-0' : 'mb-3.5')}>
-          <div
-            className="text-xs font-medium text-text mb-1.5"
+      <ul className="space-y-2.5">
+        {SKILLS.map((skill, i) => (
+          <motion.li
+            key={skill.label}
+            initial={{ opacity: 0, x: -6 }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -6 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.5 + i * 0.08 }}
+            className="flex items-center gap-2.5 text-[13px] font-medium text-text"
             style={{ letterSpacing: '-0.32px' }}
           >
+            <span className="w-1 h-1 bg-accent flex-shrink-0" aria-hidden="true" />
             {skill.label}
-          </div>
-          <div className="h-1.5 bg-surface-2 relative overflow-hidden">
-            <motion.div
-              initial={{ width: '0%' }}
-              animate={{ width: inView ? `${skill.value}%` : '0%' }}
-              transition={{
-                duration: 1.2,
-                ease: [0.22, 1, 0.36, 1],
-                delay: 0.5 + i * 0.05,
-              }}
-              className={cn(
-                'absolute top-0 left-0 bottom-0',
-                skill.dark ? 'bg-text sk-fill-shimmer-dark' : 'bg-accent sk-fill-shimmer-light',
-              )}
-            />
-          </div>
-        </div>
-      ))}
+          </motion.li>
+        ))}
+      </ul>
     </div>
   </motion.div>
 );

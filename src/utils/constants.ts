@@ -26,11 +26,11 @@ export const HERO_DESCRIPTION =
 export const DOMAIN_TAGS = ['Fintech', 'SaaS', 'HealthTech', 'Ops'] as const;
 
 export const SKILLS = [
-  { label: 'Java / Spring Boot', value: 94, dark: false },
-  { label: 'React / JavaScript', value: 88, dark: true },
-  { label: 'AWS / DevOps', value: 85, dark: false },
-  { label: 'Python / SQL', value: 82, dark: true },
-  { label: 'System Design', value: 80, dark: false },
+  { label: 'Java · Spring Boot' },
+  { label: 'React · TypeScript' },
+  { label: 'AWS · Docker' },
+  { label: 'Python · SQL' },
+  { label: 'System Design' },
 ] as const;
 
 export const SPARK_HEIGHTS = [40, 65, 45, 80, 55, 90, 70, 95] as const;
