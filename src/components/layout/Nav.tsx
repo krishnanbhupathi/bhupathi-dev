@@ -40,7 +40,7 @@ export const Nav = () => {
             <SectionLink
               key={link.href}
               section={link.href}
-              className="relative text-text text-sm font-medium px-3 py-2 opacity-80 hover:opacity-100 transition-opacity duration-200 ease-brand after:content-[''] after:absolute after:left-3 after:right-3 after:bottom-1 after:h-px after:bg-text after:scale-x-0 after:origin-left after:transition-transform after:duration-300 after:ease-brand hover:after:scale-x-100"
+              className="relative inline-flex items-center text-text text-sm font-medium px-3 py-2 min-h-[44px] opacity-80 hover:opacity-100 transition-opacity duration-200 ease-brand after:content-[''] after:absolute after:left-3 after:right-3 after:bottom-1 after:h-px after:bg-text after:scale-x-0 after:origin-left after:transition-transform after:duration-300 after:ease-brand hover:after:scale-x-100"
               style={{ letterSpacing: '-0.32px' }}
             >
               {link.label}
@@ -51,13 +51,13 @@ export const Nav = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"
-            className="inline-flex items-center justify-center w-9 h-9 ml-2 text-text-mute hover:text-text transition-colors duration-200 ease-brand"
+            className="inline-flex items-center justify-center w-11 h-11 ml-2 text-text-mute hover:text-text transition-colors duration-200 ease-brand"
           >
             <Linkedin size={20} aria-hidden="true" />
           </a>
           <SectionLink
             section="contact"
-            className="inline-flex items-center gap-2 px-4 py-2.5 ml-1 bg-text text-accent text-sm font-medium hover:-translate-y-px transition-transform duration-200 ease-brand"
+            className="inline-flex items-center gap-2 px-4 py-2.5 ml-1 min-h-[44px] bg-text text-accent text-sm font-medium hover:-translate-y-px transition-transform duration-200 ease-brand"
             style={{ letterSpacing: '-0.32px' }}
           >
             Let&apos;s talk →
@@ -85,7 +85,7 @@ export const Nav = () => {
                 key={link.href}
                 section={link.href}
                 onClick={closeMenu}
-                className="text-text text-base font-medium py-1.5"
+                className="inline-flex items-center text-text text-base font-medium py-1.5 min-h-[44px]"
                 style={{ letterSpacing: '-0.32px' }}
               >
                 {link.label}
@@ -96,7 +96,7 @@ export const Nav = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
-              className="inline-flex items-center gap-2.5 self-start text-text-mute hover:text-text text-sm font-medium py-1.5 transition-colors duration-200 ease-brand"
+              className="inline-flex items-center gap-2.5 self-start text-text-mute hover:text-text text-sm font-medium py-1.5 min-h-[44px] transition-colors duration-200 ease-brand"
               style={{ letterSpacing: '-0.32px' }}
             >
               LinkedIn
