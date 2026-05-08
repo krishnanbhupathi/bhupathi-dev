@@ -100,46 +100,43 @@ export const Projects = () => (
                   ))}
                 </div>
                 <div
-                  className="flex flex-col gap-2 border-t border-line pt-3 mt-1 mb-3"
+                  className="border-t border-line pt-3 mt-1 mb-3 flex flex-col gap-2 sm:grid sm:gap-x-4 sm:gap-y-2 sm:[grid-template-columns:1fr_auto] sm:[grid-template-areas:'code_watch'_'discuss_view']"
                   style={{ letterSpacing: '-0.32px' }}
                 >
-                  <div className="flex items-center justify-between gap-4 flex-wrap">
-                    <span className="inline-flex items-center gap-1.5 text-[13px] font-medium text-text-mute">
-                      <Lock size={14} aria-hidden="true" />
-                      Code available on request
-                    </span>
-                    <a
-                      href={project.walkthroughHref}
-                      {...(externalWalkthrough
-                        ? { target: '_blank', rel: 'noopener noreferrer' }
-                        : {})}
-                      className="inline-flex items-center gap-1.5 text-[13px] font-medium text-accent-ink hover:underline"
-                    >
-                      <Play size={14} aria-hidden="true" />
-                      Watch architecture walkthrough →
-                    </a>
-                  </div>
+                  <span className="inline-flex items-center gap-1.5 text-[13px] font-medium text-text-mute sm:[grid-area:code]">
+                    <Lock size={14} aria-hidden="true" />
+                    Code available on request
+                  </span>
+                  <a
+                    href={project.walkthroughHref}
+                    {...(externalWalkthrough
+                      ? { target: '_blank', rel: 'noopener noreferrer' }
+                      : {})}
+                    className="inline-flex items-center gap-1.5 text-[13px] font-medium text-accent-ink hover:underline sm:[grid-area:watch] sm:justify-self-end"
+                  >
+                    <Play size={14} aria-hidden="true" />
+                    Watch architecture walkthrough →
+                  </a>
                   <a
                     href={project.fullDiagramSrc}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="self-end inline-flex items-center gap-1.5 text-[13px] font-medium text-accent-ink hover:underline"
+                    className="inline-flex items-center gap-1.5 text-[13px] font-medium text-accent-ink hover:underline sm:[grid-area:view] sm:justify-self-end"
                   >
                     <ImageIcon size={14} aria-hidden="true" />
                     View full architecture diagram →
                   </a>
+                  <SectionLink
+                    section="contact"
+                    className="inline-flex items-center gap-2 text-text text-sm font-medium py-1.5 transition-[gap] duration-200 ease-brand hover:gap-[14px] max-sm:mt-2 sm:[grid-area:discuss] sm:justify-self-start"
+                  >
+                    Discuss this project
+                    <ArrowUpRight
+                      size={15}
+                      className="transition-transform duration-200 ease-brand group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    />
+                  </SectionLink>
                 </div>
-                <SectionLink
-                  section="contact"
-                  className="inline-flex items-center gap-2 text-text text-sm font-medium py-1.5 transition-[gap] duration-200 ease-brand hover:gap-[14px]"
-                  style={{ letterSpacing: '-0.32px' }}
-                >
-                  Discuss this project
-                  <ArrowUpRight
-                    size={15}
-                    className="transition-transform duration-200 ease-brand group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
-                </SectionLink>
               </div>
             </StaggerItem>
           );
