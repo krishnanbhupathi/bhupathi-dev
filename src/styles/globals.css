@@ -79,7 +79,8 @@
     max-width: 18ch;
     color: #102c26;
   }
-  .section-title .hl {
+  .section-title .hl,
+  .hl {
     display: inline-block;
     color: #b2e659;
     background: #102c26;

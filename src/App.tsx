@@ -1,32 +1,32 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
-import { Nav } from '@/components/layout/Nav';
-import { Footer } from '@/components/layout/Footer';
-import { SectionLink } from '@/components/layout/SectionLink';
+import { MainLayout } from '@/components/layout/MainLayout';
+import { MinimalLayout } from '@/components/layout/MinimalLayout';
 import { ScrollManager } from '@/router/ScrollManager';
 import { Home } from '@/pages/Home';
+import { Audit } from '@/pages/Audit';
 
 const App = () => (
   <BrowserRouter>
     <ScrollManager />
 
-    <SectionLink section="main-content" className="skip-link">
+    <a href="#main-content" className="skip-link">
       Skip to content
-    </SectionLink>
+    </a>
 
     <div className="bg-wash" aria-hidden="true" />
     <div className="bg-corners" aria-hidden="true" />
 
-    <Nav />
-
-    <main id="main-content">
-      <Routes>
+    <Routes>
+      <Route element={<MinimalLayout />}>
+        <Route path="/audit" element={<Audit />} />
+      </Route>
+      <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Home />} />
-      </Routes>
-    </main>
+      </Route>
+    </Routes>
 
-    <Footer />
     <Analytics />
   </BrowserRouter>
 );
