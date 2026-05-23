@@ -126,6 +126,21 @@ export const Audit = () => {
 
   return (
     <div id="top" className="pb-24 sm:pb-0">
+      {/* Founding client banner */}
+      <div className="bg-accent text-text relative z-[2]">
+        <Container className="py-2 sm:py-2.5 flex items-center justify-center text-center">
+          <span
+            className="text-[12px] sm:text-[13px] leading-[1.4]"
+            style={{ letterSpacing: '-0.32px' }}
+          >
+            <strong className="font-semibold">Founding client pricing</strong> — first 3
+            audits at <strong className="font-semibold">$3,500</strong>{' '}
+            <span className="opacity-70">(regular $4,500)</span> · Full money-back
+            guarantee
+          </span>
+        </Container>
+      </div>
+
       {/* Top wordmark + secondary CTA */}
       <div className="border-b border-line relative z-[2]">
         <Container className="py-4 flex items-center justify-between gap-4">
