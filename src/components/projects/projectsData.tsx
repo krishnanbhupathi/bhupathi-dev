@@ -10,8 +10,8 @@ export const PROJECTS: Project[] = [
   {
     category: 'SaaS · Analytics',
     title: 'Real-time Analytics Platform',
-    role: 'Lead engineer',
-    roleSecondary: 'Full-stack',
+    role: 'Solo build',
+    roleSecondary: 'Demo project',
     description:
       'Designed and built a real-time event pipeline with a custom query engine and self-serve reporting UI. Handled ingestion at scale using Kafka, with ClickHouse for fast OLAP queries and Postgres for transactional data.',
     stats: [
@@ -27,13 +27,13 @@ export const PROJECTS: Project[] = [
   {
     category: 'Fintech · Payments',
     title: 'Treasury & Payments Portal',
-    role: 'Architect & lead dev',
-    roleSecondary: 'Full-stack',
+    role: 'Solo build',
+    roleSecondary: 'Demo project',
     description:
-      'Built a multi-entity treasury portal with role-based access, cryptographically signed audit trails, and automated reconciliation across multiple banking APIs. Designed for compliance-heavy environments with SOC 2 export support.',
+      'Built a multi-entity treasury portal with role-based access, cryptographically signed audit trails, and automated reconciliation across multiple banking APIs. Designed for compliance-heavy environments with SOC 2-style export support.',
     stats: [
       { value: 'Multi-bank', label: 'API integration' },
-      { value: 'SOC 2', label: 'Export ready' },
+      { value: 'SOC 2-style', label: 'Audit export' },
     ],
     tech: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'AWS KMS', 'Docker'],
     diagram: <TreasuryDiagram />,
@@ -45,7 +45,7 @@ export const PROJECTS: Project[] = [
     category: 'Logistics · AI Automation',
     title: 'AI Workflow Automation Suite',
     role: 'Solo engineer',
-    roleSecondary: 'End-to-end build',
+    roleSecondary: 'Client project',
     description:
       'Designed an LLM-driven automation layer that replaced manual ops workflows — document parsing with OCR, vendor triage, and Slack-native human-in-the-loop approvals. Built on Temporal for durable orchestration with retry and state management.',
     stats: [
@@ -61,8 +61,8 @@ export const PROJECTS: Project[] = [
   {
     category: 'HealthTech · Telehealth',
     title: 'Clinical Operations Platform',
-    role: 'Lead engineer',
-    roleSecondary: 'Full-stack',
+    role: 'Solo build',
+    roleSecondary: 'Demo project',
     description:
       'Built a telehealth platform covering patient intake, clinician scheduling, automated billing, and a HIPAA-aligned audit layer. Designed triage routing logic and downstream automation for prescriptions, lab orders, and compliance exports.',
     stats: [
